@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap');
+
+:root{
+    --main-radius: 5px;
+    --main-padding: 5px;
+}
+
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+        /* Essa propriedade diz quantas colunas farão parte
+         * da confuiguração do grid e quais serão os 
+         * tamanhos (frações) de cada uma.
+         * Nesse caso, especificamente, utilizaremos 
+         * todas as colunas com os mesmos tamanhos.
+         */
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+        /* Essa propriedade define o layout (template) das 
+         * colunas do grid.
+         * Ela também especifica as frações que cada
+         * linha ocupara.
+         * Perceba que todas têm tamanhos diferentes
+         * que são representados pelos números antes do "fr".
+         */
+    grid-template-areas: 
+        "nav nav nav nav"
+        "sidebar main main main"
+        "sidebar content1 content2 content3"
+        "footer footer footer footer";
+        /* Aqui, definimos (utilizando os nomes das áreas, 
+        * quais serão os espaços) ocupados por cada 
+        * uma dessas áreas.
+        */
+        
+        /* Importante perceber que na primeira linha,
+        * onde a navbar ocupa o espaço das quatro colunas,
+        * o nome da tag, foi escrita quatro vezes.
+        * O mesmo acontece com a sidebar, que foi repetida
+        * em duas linhas diferentes, na mesma coluna.
+        * E também se repetiu no footer.
+        */
+
+        /* IMPORTANTE:
+        * Para essa propriedade funcionar, vamos precisar
+        * atribuir o mesmo nome que utilizamos para organizar
+        * para cada tag relacionada.
+        */
+    grid-gap: 0.2rem;
+        /* Essa propriedade traz um resultado 
+         * similar ao margim, já que insere um espaço entre
+         * cada espaço do grid.
+         */
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #004d40;
+    text-align: center;
+}
+
+nav{
+    background: #a7ffeb;
+    grid-area: nav;
+    /* Essa propriedade é essencial para o correto funcionamento
+     * do grid.
+     */
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+main{
+    background: #84ffff;
+    grid-area: main;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#sidebar{
+    background: #18ffff;
+    grid-area: sidebar;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#content1{
+    background: #6fffd2;
+    grid-area: content1;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#content2{
+    background: #64ffda;
+    grid-area: content2;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#content3{
+    background: #73ffba;
+    grid-area: content3;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+footer{
+    background: #1de9b6;
+    grid-area: footer;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+@media only screen and (max-width: 550px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+        grid-template-areas: 
+            "nav"
+            "sidebar"
+            "main"
+            "content1"
+            "content2"
+            "content3"
+            "footer";
+    }
+}

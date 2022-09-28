@@ -1,0 +1,37 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.container video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container video:nth-child(2){
+  /* Child(2) pq é o segundo elemento de video 
+   * inserido dentro do container 
+  **/
+  mix-blend-mode: screen;
+  /* Essa propriedade vai fazer o video 2 se sobrepor e 
+   * fazer com que a parte escura seja "mesclada" a parte
+   * clara do primeiro video.
+   * Assim, o que é preto vai ficar transparente. 
+  **/
+  filter: brightness(2);
+  /* Essa propriedade vai aumentar o brilho do branco
+   * do segundo video para ocultar as partes do primeiro
+   * video que ficaram aparecendo no fundo. 
+  **/
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game whit Javascript</title>
+</head>
+<body>
+    <canvas id="stage" width="600" height="600"></canvas>
+
+    <script type="text/javascript">
+        window.onload = function(){
+            var stage = document.getElementById('stage');
+            var ctx = stage.getContext("2d");
+                // ctx = contexto
+            document.addEventListener("keydown", keyPush);
+
+            setInterval(game, 100);
+
+            const vel = 1;
+                // Essa variável se preocupa em definir a quantidade de casas que a cobra vai andar, cada vez que houver um movimento.
+                // QUe é o mesmo que dizer: Quantas casas a cobra vai andar, cada vez que a função for executada.
+
+            var vx = 0;
+            var vy = 0;
+                // Valores de velocidade X e Y = a zero.
+            var px = 10;    // px = posição em x
+            var py = 10;    // py = posição em y
+                // Essa variável definirá o ponto de início do jogo.
+                // Logo, a cobrinha vai começar sempre no ponto (x, y) = (10, 10).
+
+            var tp = 30;    // tp = tamanho da peça
+                // posteriormente pode ser alterado para lado, já que o lado e a altura serão sempre iguais.
+
+            var qp = 20;    // qp = quantidade de peças que terá no tabuleiro.
+            
+            var ax = 15;    // ax = maça (apple) na posição x
+            var ay = 15;    // ay = maça (apple) na posição y
+                // A maçã vai aparecer sempre na posição inicial (x, y) = (15, 15).
+            
+            var trail = [];
+                // O rastro (trail) começa com um array vazio pq ainda não há nenhum elemento no rastro.
+            
+            tail = 5;
+                // Apesar de termos definido anteriormente que a cauda não teria nada, 5 é o número inicial do tamanho da cobrinha.
+
+            function game(){
+                px += vx;
+                py += vy;
+                // Essa definição nos diz sobre o comportamento inicial da cobrinha.
+                // Aqui, a posição inicial recebe a velocidade inicial, que é zero. Logo, a cobrinha fica parada.
+
+                if (px < 0) {
+                    //Se a cobrinha veio para a esquerda e bate na parede, ela deverá ser enviada para o final.
+                    px = qp - 1;
+                }
+                if (px > qp-1){
+                    px = 0;
+                }
+                if (py < 0) {
+                    //Se a cobrinha veio para a esquerda e bate na parede, ela deverá ser enviada para o final.
+                    py = qp - 1;
+                }
+                if (py > qp-1){
+                    py = 0;
+                }
+
+                // Toda vez que houver movimento no jogo, a tela terá que ser repintada
+                ctx.fillStyle = "black";    // Essa parte pinta o tabuleiro de preto
+                ctx.fillRect(0, 0, stage.width, stage.height);
+                
+                // Essa contexto será para pintar a maçã.
+                ctx.fillStyle = "red";
+                ctx.fillRect(ax * tp, ay * tp, tp, tp);
+
+                // Esse bloco pinta a cobrinha, conforme ela anda e cresce no tabuleiro.
+                ctx.fillStyle = "gray";
+                for ( var i = 0;  i < trail.length; i++){
+                    ctx.fillRect(trail[i].x*tp, trail[i].y*tp, tp-1, tp-1);
+                    if (trail[i].x == px && trail[i].y == py){
+                        // Essa condicional verifica se a cabeça bateu em algum elemento da cauda.
+                        // Se a cabeça tiver batido e, qualquer lugar da cauda, será fim de jogo.
+                        vx = 0;
+                        vy = 0;
+                        tail = 5;   // Essa definição é importante para "zerar" o tamanho da cobrinha
+                    }
+                }
+
+                trail.push( {x:px, y:py} );
+                // acrescenta um elemento ao final do array
+
+                while(trail.length > tail){
+                    trail.shift();
+                    // Usando o shift, o primeiro elemento é tirado do array.
+                }
+
+                // Condicional que vai sumir com uma maçã e colocar ela em outro ponto do tabuleiro.
+                if (ax == px && ay == py){
+                    tail++;
+                    ax = Math.floor(Math.random() * qp);
+                    ay = Math.floor(Math.random() * qp);
+                }
+            }
+
+            function keyPush(event){
+                switch (event.keyCode){
+                    case 37: //Left
+                        vx = -vel;
+                        vy = 0;
+                        break;
+                    
+                    case 38: //Up
+                        vx = 0;
+                        vy = -vel;
+                        break;
+                    
+                    case 39: //Right
+                        vx = vel;
+                        vy = 0;
+                        break;
+
+                    case 40: //Down
+                        vx = 0;
+                        vy = vel;
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

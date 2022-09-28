@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container h1{
+    text-align: center;
+}
+
+#memoria{
+    max-width: 40rem;
+}
+
+#memoria #timer{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 36pt;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#memoria img{
+    margin-bottom: 20px;
+    border: thin solid black;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+#memoria #rodape{
+    text-align: center;
+}
+

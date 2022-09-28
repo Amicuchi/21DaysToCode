@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game with Javascript</title>
+
+    <link 
+        rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+        crossorigin="anonymous"
+    >
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Jogo da Memória</h1>
+        <div id="memoria">
+            <div class="row">
+                <div class="col">
+                    <p id="timer">00:00</p>
+                </div>
+            </div>
+            <div class="" id="imagens"> <!-- Matrix de imagens -->
+                <!--  Perceba que as imagens não foram inseridas 
+                    | no  HTML, pois elas serão inseridas via 
+                    | Javascript, para que possa haver uma variação,
+                    | de maneira que possa haver aleatoriedade na 
+                    | organização do tabuleiro.
+                -->
+                <div class="row">   <!-- Linha 1 -->
+                    <div class="col-3">
+                        <img id="i0" crossorigin="anonymous" />
+                            <!-- O atributo crossorigin='anonymous' é utilizado para 
+                                 deixar evidente que algum recurso de outra origem
+                                 está sendo utilizado no nosso site.
+                                 Nesse caso, as imagens são originais de outra fonte.
+                             -->
+                    </div>
+                    <div class="col-3">
+                        <img id="i1" crossorigin="anonymous" />
+                    </div>
+                    <div class="col-3">
+                        <img id="i2" crossorigin="anonymous" />
+                    </div>
+                    <div class="col-3">
+                        <img id="i3" crossorigin="anonymous" />
+                    </div>
+                </div>
+
+                <div class="row">   <!-- Linha 2 -->
+                    <div class="col-3">
+                        <img id="i4" crossorigin="anonymous" />
+                    </div>
+                    <div class="col-3">
+                        <img id="i5" crossorigin="anonymous" />
+                    </div>
+                    <div class="col-3">
+                        <img id="i6" crossorigin="anonymous" />
+                    </div>
+                    <div class="col-3">
+                        <img id="i7" crossorigin="anonymous" />
+                    </div>
+                </div>
+
+                <div class="row">   <!-- Linha 3 -->
+                    <div class="col-3">
+                        <img id="i8" crossorigin="anonymous" />
+                    </div>
+                    <div class="col-3">
+                        <img id="i9" crossorigin="anonymous" />
+                    </div>
+                    <div class="col-3">
+                        <img id="i10" crossorigin="anonymous" />
+                    </div>
+                    <div class="col-3">
+                        <img id="i11" crossorigin="anonymous" />
+                    </div>
+                </div>
+
+                <div class="row">   <!-- Linha 4 -->
+                    <div class="col-3">
+                        <img id="i12" crossorigin="anonymous" />
+                    </div>
+                    <div class="col-3">
+                        <img id="i13" crossorigin="anonymous" />
+                    </div>
+                    <div class="col-3">
+                        <img id="i14" crossorigin="anonymous" />
+                    </div>
+                    <div class="col-3">
+                        <img id="i15" crossorigin="anonymous" />
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="rodape">
+                <div class="col">
+                    <button id="btnInicio" type="button" class="btn btn-primary btn-lg">Iniciar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

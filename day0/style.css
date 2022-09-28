@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap");
+
+*{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    padding: 0 50px;
+    display: flex;
+    min-height: 100vh;
+}
+
+img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* --------------------------------- */
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    z-index: 10;
+}
+
+header .logo{
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
+header div ul{
+    position: relative;
+    display: flex;
+}
+
+header div ul li{
+    list-style: none;
+    margin: 0 20px;
+}
+
+header div ul li a{
+    position: relative;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 4px 10px;
+    color: #fff;
+}
+
+header div ul li a:hover,
+header div ul li a.active
+{
+    color: #111;
+    background: #fff;
+}
+
+/* --------------------------------- */
+section{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+}
+.otherSection{
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 5rem;
+}
+
+.principal h1,
+.principal h3{
+    align-items: center;
+}
+
+h1, h3{
+    color: #fff;
+    transition: 0.5s ease-in-out;
+    text-shadow: 3px 3px 8px #000;
+}
+
+h1{
+    font-size: 3rem;
+    line-height: 5rem;
+    font-weight: 700;
+}
+
+h3{
+    font-weight: 300;
+}
+
+small{
+    font-size: 0.85rem;
+}
+
+section h1 span{
+    font-size: 3rem;
+    line-height: 5rem;
+    font-weight: 700;
+}
+
+/* --------------------------------- */
+footer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+footer li{
+    list-style: none;
+}
+
+footer li a{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #999;
+    border-radius: 30%;
+}
+
+footer li a:hover{
+    background: rgb(158, 119, 230);
+}
+
+#linkedin::before{
+    content: "\f0e1";
+    font-family: fontAwesome;
+    color: #000;
+}
+#github::before{
+    content: "\f09b";
+    font-family: fontAwesome;
+    color: #000;
+}
+#instagram::before{
+    content: "\f16d";
+    font-family: fontAwesome;
+    color: #000;
+}
+
+.otherBodies{
+    background: #eee;
+}
+
+.otherSection ul li,
+.otherSection p{
+    line-height: 2rem;
+    text-align: center;
+    list-style: none
+}
+
+.containerATC{
+    position: relative;
+    width: 70%;
+    align-self: center;
+    text-align: center;
+}
+
+
+
+.bannerChallenge{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    background: url(./img/challenge.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: block;
+    align-items: center;
+}
+
+/* ---------------------------------------- */
+/* ABOUT ME */
+
+#bodyAbouteMe{
+    background: #000;
+}
+.specialHeader{
+    background: transparent;
+}
+
+.bannerPersonal{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    background: url(../day0/imgdb/onlyMe.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    display: flex;
+    align-items: center;
+}
+
+.bannerPersonal .text{
+    width: 60%;
+    align-self: flex-start;
+}
+
+.bannerPersonal p{
+    color: #fff;
+}
+
+
+/* ---------------------------------------- */
+/* JOURNEY */
+
+#bodyJournal{
+    padding: 0;
+}
+
+.bannerJourney{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    background: url(./img/journey.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: block;
+    align-items: center;
+}
+
+.dark{
+    color: #000;
+}
+
+article{
+    margin-bottom: 3rem;
+}
